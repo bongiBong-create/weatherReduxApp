@@ -1,11 +1,14 @@
-import Header from "../components/header/Header";
-import Home from "../pages/Home";
+import Header from "../features/header/Header";
+import Forecast from "../widgets/Forecast";
+import styles from "./styles/App.module.css";
 
 function App() {
   return (
     <div className="container">
       <Header />
-      <Home />
+      <main className={styles.main}>
+        <Forecast />
+      </main>
     </div>
   );
 }
