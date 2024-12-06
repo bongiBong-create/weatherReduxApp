@@ -1,0 +1,24 @@
+.search {
+  width: 506px;
+  font-size: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.search::after {
+  content: "";
+  position: absolute;
+  background: url("../../app/imgs/search.svg") no-repeat;
+  width: 24px;
+  height: 24px;
+  top: 11px;
+  right: 16px;
+}
+
+.search input {
+  background-color: rgb(245, 244, 244, 0.4);
+  font-size: 20px;
+  padding: 11px 56px 11px 16px;
+  color: #707070;
+  border-radius: 8px;
+}

@@ -1,0 +1,29 @@
+.forecast__today {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  flex: 1;
+}
+
+.forecast__today--date,
+.forecast__today--weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.forecast__today--date__city {
+  font-size: 1.2rem;
+}
+
+.forecast__today--temp {
+  font-size: 5.6rem;
+}
+
+.forecast__today--weather__info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

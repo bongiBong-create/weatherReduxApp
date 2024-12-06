@@ -1,15 +1,12 @@
-import Header from "../features/header/Header";
-import Forecast from "../widgets/Forecast";
-import styles from "./styles/App.module.css";
+import { Header } from "../features/header";
+import { WeatherInfo } from "../features/weather-info";
 
 function App() {
   return (
-    <div className="container">
+    <main className="main">
       <Header />
-      <main className={styles.main}>
-        <Forecast />
-      </main>
-    </div>
+      <WeatherInfo />
+    </main>
   );
 }
 

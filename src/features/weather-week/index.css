@@ -1,0 +1,7 @@
+.forecast__week {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  grid-template-rows: repeat(2, 196px);
+  gap: 16px;
+}
