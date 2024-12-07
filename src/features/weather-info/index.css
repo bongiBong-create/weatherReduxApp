@@ -1,7 +1,19 @@
 .weather {
   color: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 20px;
+  flex: 1;
+}
+
+.status {
+  flex: 1;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .weather {
+    flex-direction: column;
+  }
 }

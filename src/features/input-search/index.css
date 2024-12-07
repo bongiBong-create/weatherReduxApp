@@ -22,3 +22,9 @@
   color: #707070;
   border-radius: 8px;
 }
+
+@media (max-width: 600px) {
+  .search {
+    width: 250px;
+  }
+}

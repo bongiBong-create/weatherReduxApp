@@ -8,29 +8,30 @@ import "./index.css";
 export const WeatherWeek = () => {
   const dispatch = useDispatch();
   const { weatherWeek, status, error } = useSelector((state) => state.week);
+  const city = useSelector((state) => state.week.city);
 
   const newWeatherWeek = weatherWeek.slice(1);
 
   useEffect(() => {
-    dispatch(fetchWeatherWeek("Saint-Petersburg"));
-  }, [dispatch]);
+    const timeOut = setTimeout(() => dispatch(fetchWeatherWeek(city)), 1000);
 
-  if (status === "pending") {
-    return <div>Loading...</div>;
-  }
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [city]);
 
   if (status === "rejected") {
-    return <div>{error}</div>;
+    return <div className="status">{error}</div>;
   }
 
-  if (!weatherWeek) {
-    return <div>Нет данных о погоде</div>;
+  if (!weatherWeek || !weatherWeek.length) {
+    return <div className="status">Нет данных о погоде на неделю</div>;
   }
 
   return (
     <div className="forecast__week">
       {newWeatherWeek.map((day, id) => (
-        <ForeCastWeekItem key={id} day={day}/>
+        <ForeCastWeekItem key={id} day={day} />
       ))}
     </div>
   );

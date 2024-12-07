@@ -5,3 +5,16 @@
   grid-template-rows: repeat(2, 196px);
   gap: 16px;
 }
+
+@media (max-width:900px) {
+  .forecast__week {
+    overflow-y: auto;
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .forecast__week {
+    max-height: 209px;
+  }
+}
