@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { converterCels } from "../../shared";
-import { converterDate } from "../../shared/model";
+import { converterCels, converterDate } from "../../../utils";
+import { BASE__URL, key } from "../../../api/api";
 
 const initialState = {
   weatherToday: {},
@@ -13,9 +13,7 @@ export const fetchWeatherToday = createAsyncThunk(
   "today/fetchWeatherToday",
   async function (city, { rejectWithValue }) {
     try {
-      const response = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/today?key=Z9QMSQ5RDB4HB8Y6JHYRAYR25`
-      );
+      const response = await fetch(`${BASE__URL}${city}/today?key=${key}`);
 
       if (!response.ok) {
         throw new Error("Cant get data from server");

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchWeatherToday } from "../../app/store/weatherTodaySlice";
+import { fetchWeatherToday } from "../../app/store/reducers/weatherTodaySlice";
 import { IconWeather } from "../../shared";
 
 import "./index.css";

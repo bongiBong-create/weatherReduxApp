@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ForeCastWeekItem } from "../../shared/ui/forecast-week-item";
-import { fetchWeatherWeek } from "../../app/store/weatherWeekSlice";
+import { fetchWeatherWeek } from "../../app/store/reducers/weatherWeekSlice";
+
 
 import "./index.css";
 

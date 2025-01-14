@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { converterCels } from "../../shared";
-import { converterDate } from "../../shared/model";
+import { BASE__URL, key } from "../../../api/api";
+import { converterCels, converterDate } from "../../../utils";
 
 const initialState = {
   weatherWeek: [],
@@ -13,9 +13,7 @@ export const fetchWeatherWeek = createAsyncThunk(
   "week/fetchWeatherWeek",
   async function (city, { rejectWithValue }) {
     try {
-      const response = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/next6days?key=Z9QMSQ5RDB4HB8Y6JHYRAYR25`
-      );
+      const response = await fetch(`${BASE__URL}${city}/next6days?key=${key}`);
 
       if (!response.ok) {
         throw new Error("Cant get data from server");
@@ -37,7 +35,6 @@ const weatherWeekSlice = createSlice({
       state.city = action.payload;
     },
   },
-
   extraReducers: (builder) => {
     builder
       .addCase(fetchWeatherWeek.pending, (state) => {

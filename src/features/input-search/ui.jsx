@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { setWeekCity } from "../../app/store/weatherWeekSlice";
-import { setTodayCity } from "../../app/store/weatherTodaySlice";
+import { setWeekCity } from "../../app/store/reducers/weatherWeekSlice";
+import { setTodayCity } from "../../app/store/reducers/weatherTodaySlice";
 
 import "./index.css";
 

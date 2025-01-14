@@ -1,3 +1,3 @@
 export { IconLogo } from "./ui/icon-logo/ui";
 export { IconWeather } from "./ui/icon-weather/ui";
-export { converterCels } from "./model";
+export { converterCels } from "../utils";
